@@ -1,50 +1,77 @@
-# Welcome to your Expo app 👋
+# Expo project + Expo Go — Quick Setup
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This README documents a minimal, practical workflow to create an Expo app locally and run it on a physical device using Expo Go.
 
-## Get started
+## Prerequisites
+- Node.js (LTS recommended). Use nvm to manage versions if needed.
+- Git
+- A phone with Expo Go (iOS App Store / Android Play Store)
+- (Optional) Android Studio for Android emulator, Xcode for iOS simulator (macOS only)
 
-1. Install dependencies
+## Create a new Expo project
+Use the official starter tool:
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+npx create-expo-app my-app
+cd my-app
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Choose a template (blank, tabs, etc.) when prompted.
 
-## Learn more
+## Run the development server
+Start Metro/dev server:
 
-To learn more about developing your project with Expo, look at the following resources:
+```
+npx expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+This opens the Expo Dev Tools in your browser and prints a QR code in the terminal.
 
-## Join the community
+Common keys in the Dev Tools terminal:
+- a — open Android emulator
+- i — open iOS simulator (macOS + Xcode)
+- r — reload
+- d — toggle developer menu
 
-Join our community of developers creating universal apps.
+## Run on a physical device with Expo Go
+1. Install Expo Go from the App Store / Play Store.
+2. Ensure your phone and development machine are on the same Wi‑Fi network (or use tunnel).
+3. From the Dev Tools or terminal, scan the QR code:
+    - iOS: open Camera app and tap the QR → open in Expo Go
+    - Android: open Expo Go → Scan QR Code, or use device camera if it supports deep links
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+If network issues occur, select the connection type "Tunnel" in Dev Tools or start with:
+
+```
+npx expo start --tunnel
+```
+
+Notes:
+- Expo Go runs JavaScript and the Expo SDK; it works out of the box for managed projects.
+- If you add custom native modules, use a custom dev client (expo-dev-client) and EAS Build.
+
+## Android USB debugging (alternative)
+For USB testing with Android device:
+- Enable USB debugging on device.
+- Connect via USB and run:
+  - `npx expo start`, then choose "Tunnel" or run `adb reverse tcp:8081 tcp:8081` (if using LAN and adb is installed).
+
+## When you need a standalone app or native modules
+- Use EAS Build to produce signed APK/AAB or IPA:
+  - Configure `eas.json`
+  - Build with `eas build --platform android` or `eas build --platform ios`
+- For custom native code during development, use `expo-dev-client` and build a dev client with EAS.
+
+## Useful commands
+- Start: `npx expo start`
+- Create: `npx create-expo-app my-app`
+- Run Android emulator: press `a` in dev tools or `npx expo start` then `a`
+- Run iOS simulator: press `i` (macOS only)
+- Start with tunnel: `npx expo start --tunnel`
+
+## Troubleshooting
+- QR won’t connect: check firewall, same network, try Tunnel.
+- "Expo Go can't load the app": make sure Metro is running and the correct connection mode is selected.
+- Needing native modules: switch to dev client + EAS Build.
+
+That's all you need to get a new Expo project running locally and on a phone with Expo Go. Adjust steps per OS and network environment as needed.
