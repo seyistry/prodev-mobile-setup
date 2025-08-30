@@ -28,4 +28,4 @@ Steps to Install Expo Go
     Open the Expo Go app on your device.
     Create a new account or log in if you already have one.
 
-Document your setup process and any challenges faced in the README.md file. This will help you track your progress and troubleshoot any issues that arise during development.
+Document your setup process and any challenges faced in the README.md file. This will help you track your progress and troubleshoot any issues that arise during development.`
