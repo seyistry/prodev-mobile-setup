@@ -1,31 +1,50 @@
-## Objective
+# Welcome to your Expo app 👋
 
-Mobile development demands more computational resources compared to web development. To ensure a smooth development experience, we will be using the Expo Framework for React Native, which simplifies mobile app development and testing.
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-To successfully complete this task, ensure you have the following:
+## Get started
 
-    Node.js LTS installed
-    VS Code (our recommended IDE)
-    macOS, Linux, or Windows
-    Expo Go installed on your physical device (Android or iOS)
+1. Install dependencies
 
-These tools are essential for completing the upcoming projects efficiently.
-Instructions
+   ```bash
+   npm install
+   ```
 
-By now, you should already have Node.js LTS, VS Code, and a compatible operating system installed. This task focuses on setting up Expo Go on your physical device.
-Why Expo Go?
+2. Start the app
 
-Unlike web development, mobile development relies on device emulators to test applications. However, keeping up with the ever-evolving mobile ecosystem (e.g., iPhone 7 → iPhone 16 Pro Max, various Android devices) can be costly in terms of hardware requirements.
+   ```bash
+   npx expo start
+   ```
 
-Expo Go provides a cost-effective solution by allowing you to test and run your React Native applications directly on your physical device, supporting both iOS and Android seamlessly.
-Steps to Install Expo Go
+In the output, you'll find options to open the app in a
 
-    Visit the official Expo Go homepage: https://expo.dev/go.
-    Select the latest SDK version.
-    Click on Install for your device:
-        Android: Install from the Google Play Store.
-        iOS: Install from the Apple App Store.
-    Open the Expo Go app on your device.
-    Create a new account or log in if you already have one.
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-Document your setup process and any challenges faced in the README.md file. This will help you track your progress and troubleshoot any issues that arise during development.`
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+
+## Get a fresh project
+
+When you're ready, run:
+
+```bash
+npm run reset-project
+```
+
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+
+## Learn more
+
+To learn more about developing your project with Expo, look at the following resources:
+
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+
+## Join the community
+
+Join our community of developers creating universal apps.
+
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
